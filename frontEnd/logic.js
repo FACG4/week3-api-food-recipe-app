@@ -1,5 +1,3 @@
-
-
 //function return the title of recipes from the api
 function recipTitle(response) {
   var titleArr = [];
