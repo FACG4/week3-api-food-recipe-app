@@ -27,6 +27,7 @@ addlistener("form_id", "submit", function(e) {
   url = url.concat(search_text);
   fetch(url, function(response) {
     var newTitleArr = recipTitle(response);
+    
     for (let i of newTitleArr) {
       var figure = creatationElements("our_divs", 'figure');
       var id_figure = newTitleArr.indexOf(i);
