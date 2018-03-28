@@ -7,31 +7,44 @@ function recipTitle(filteredrponse) {
   return titleArr;
 };
 
-//function return the ingredients of recipes from the api
-function recipIngredients(filteredrponse) {
-  var ingredientsArr = [];
-  for (let i of filteredrponse) {
-    ingredientsArr.push(i.ingredients);
-  }
-  return ingredientsArr;
-};
-
 //filtered response
-function filteredResponse (response) {
-  const result = response.results.filter(function (item) {
+function filteredResponse(response) {
+  const result = response.results.filter(function(item) {
     return item.thumbnail != '';
   });
   return result;
 }
 
 //function return the thumbnail of recipes from the api
-function recipPic (filteredrponse) {
+function recipPic(filteredrponse) {
   return filteredrponse.map((item) => item.thumbnail);
 }
 
 //function return the image
-function ingimg(response) {
-return response.hits[0].largeImageURL;
+function another_recipes(response) {
+  let new_link = [];
+  for (let i of response.hits) {
+    new_link.push(i.recipe.url);
+  }
+  return new_link;
+}
+
+//imges
+function img_recipes(response) {
+  let new_img = [];
+  for (let i of response.hits) {
+    new_img.push(i.recipe.image);
+  }
+  return new_img;
+}
+
+//titles
+function another_title_recipes(response) {
+  let new_title = [];
+  for (let i of response.hits) {
+    new_title.push(i.recipe.label);
+  }
+  return new_title;
 }
 
 //function fetch a connection to the api
@@ -47,6 +60,6 @@ function fetch(url, callback) {
   xhr.send();
 };
 
-if (typeof module !== 'undefined'){
-  module.exports = [recipTitle, recipIngredients, filteredResponse, ingimg];
+if (typeof module !== 'undefined') {
+  module.exports = [recipTitle, recipIngredients, filteredResponse];
 }
