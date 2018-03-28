@@ -61,5 +61,5 @@ function fetch(url, callback) {
 };
 
 if (typeof module !== 'undefined') {
-  module.exports = [recipTitle, recipIngredients, filteredResponse];
+  module.exports = [recipTitle, filteredResponse ,recipPic , another_recipes];
 }
