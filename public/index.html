@@ -1,21 +1,31 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <form id="form_id" action="index.html" method="post">
-      <label for="search_input"></label>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="This site for hungry people who want to search about food recipes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+  <title>foodRecipes</title>
+</head>
+
+<body>
+  <section class="header_style">
+    <h1>Food Recipes<img src="logo.svg" alt="Logo"></h1>
+    <form id="form_id" class="form_style" action="index.html">
+      <label for="search_input">bb</label>
       <input type="text" placeholder="Search" id="search_input">
-      <label for="submit_button"></label>
-      <input type="submit" value="Submit" id="submit_button">
+      <label for="submit_button">bb</label>
+      <input type="submit" value="Search" id="submit_button">
     </form>
-    <section id="our_divs">
+  </section>
+  <section id="our_section" class="searsh_result">
+  </section>
+  <script src="../frontEnd/logic.js"></script>
+  <script src="../frontEnd/dom.js"></script>
 
-    </section>
-    <script src="../frontEnd/logic.js"></script>
-    <script src="../frontEnd/dom.js"></script>
+</body>
 
-  </body>
 </html>

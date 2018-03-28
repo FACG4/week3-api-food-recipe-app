@@ -1,9 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  pointer-events: none;
+}
+
+.header_style {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #FFA50090;
+  background-image: url("backgroung_web.jpg");
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  margin: 0;
+  height: 70vh;
+  /* min-height: 100vh; */
+}
+
+.header_style h1 {
+  font-weight: normal;
+  color: #242424;
+  font-family: 'Tangerine', serif;
+  font-size: 5rem;
+}
+
+.header_style img {
+  height: 4rem;
+}
+
+.form_style {
+  padding: 16px;
+  max-width: 630px;
+  width: 100%;
+  /* background-color: #EEEEEE; */
+  border-radius: 4px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form_style input[type=text] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 4px;
+  box-shadow: 0px 1px 4px 0px #FFA500;
+}
+
+.form_style label {
+  position: absolute;
+  left: -9000px;
+}
+
+.form_style input[type=submit] {
+  background-color: #FFA500;
+  color: #242424;
+  padding: 14px 20px;
+  margin: 0 auto;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  min-height: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  box-shadow: 0px 1px 4px 0px #ccc1cc;
+}
+
+.searsh_result {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  /* max-width: 700px; */
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
 .figure_style {
-  background: pink;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  min-width: 200px;;
+  /* max-width: 220px; */
+  overflow: hidden;
+  padding: 5px;
 }
-.figure_style img{
 
+.figure_style img {
+  width: 220px;
+  height: 200px;
+  border: 1px solid #242424;
+  border-radius: 50%;
 }
-.figure_style caption{
 
+.figure_style figcaption {
+  width: 220px;
+  height: 3rem;
+  padding: 2px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.figure_style a {
+  margin-top: 10px;
+  text-align: center;
 }

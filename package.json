@@ -10,14 +10,12 @@
     "type": "git",
     "url": "git+https://github.com/FACG4/week3-api-food-recipe-app.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/FACG4/week3-api-food-recipe-app/issues"
   },
   "homepage": "https://github.com/FACG4/week3-api-food-recipe-app#readme",
-  "dependencies": {},
   "devDependencies": {
     "tap-spec": "^4.1.1",
     "tape": "^4.9.0"
