@@ -6,6 +6,10 @@ function addlistener(element_id, event_listener, callback) {
   return document.getElementById(element_id).addEventListener(event_listener, callback);
 }
 
+function create(element) {
+  return document.createElement(element);
+}
+
 function creatationElements(element_id ,tag_name) {
   var parent = selector(element_id);
   var tag = document.createElement(tag_name);
@@ -14,8 +18,6 @@ function creatationElements(element_id ,tag_name) {
 }
 
 var search_input = selector("search_input");
-var btn_search = selector("submit_button");
-
 
 // Search recipes by title and git pictures
 addlistener("form_id", "submit", function(e) {
@@ -23,16 +25,19 @@ addlistener("form_id", "submit", function(e) {
   var url = "https://cors-anywhere.herokuapp.com/http://www.recipepuppy.com/api/?q="
   var search_text = search_input.value;
   var section = selector("our_divs");
-
+  section.innerHTML = '';
   url = url.concat(search_text);
   fetch(url, function(response) {
-    var newTitleArr = recipTitle(response);
+    const filtered = filteredResponse(response);
+    var newTitleArr = recipTitle(filtered);
     for (let i of newTitleArr) {
       var figure = creatationElements("our_divs", 'figure');
       var id_figure = newTitleArr.indexOf(i);
       figure.setAttribute("id" ,id_figure );
       figure.setAttribute("class" , "figure_style");
-      creatationElements(id_figure, "img");
+      const recipe_img = creatationElements(id_figure, "img");
+      const img_src = recipPic(filtered)[id_figure];
+      recipe_img.src = img_src;
       var tag = creatationElements(id_figure, "figcaption");
       tag.textContent = i ;
     }
@@ -41,31 +46,12 @@ addlistener("form_id", "submit", function(e) {
 });
 
 // Show ingredients
-function addlistener(element_id , event_listener, functionn){
-  return document.getElementById(element_id).addEventListener(event_listener , functionn);
-}
 
-var search = selector("search_input");
-var btn_searc = selector("submit_button")
-
-
-// Search recipes by title and git pictures
-
-
-
-
-// Show ingredients
-
-function create(element) {
-  return document.createElement(element);
-}
 
 
 
 function renderingre(target) {
-  // var parent =selector(target.id);
-var parent =selector(target.id);
-
+  var parent =selector(target.id);
   parent.setAttribute("class","active")
   var diving=create("div");
   diving.setAttribute("id", "container");
