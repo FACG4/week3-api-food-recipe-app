@@ -99,6 +99,10 @@ img {
   overflow: hidden;
   padding: 5px;
 }
+.figure_style:hover{
+  cursor: pointer;
+  background: #ccc1cc;
+}
 
 .figure_style img {
   width: 220px;
