@@ -1,0 +1,23 @@
+{
+  "name": "week3-api-food-recipe-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape ./frontEnd/test.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FACG4/week3-api-food-recipe-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FACG4/week3-api-food-recipe-app/issues"
+  },
+  "homepage": "https://github.com/FACG4/week3-api-food-recipe-app#readme",
+  "devDependencies": {
+    "tap-spec": "^4.1.1",
+    "tape": "^4.9.0"
+  }
+}

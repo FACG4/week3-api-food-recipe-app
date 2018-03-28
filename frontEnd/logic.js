@@ -27,6 +27,8 @@ function fetch(url, callback) {
   xhr.open('GET', url)
   xhr.send();
 };
-
-
+console.log('ssssssssssssssssss');
+console.log('sss', module);
+if(module){
 module.exports = [recipTitle , recipIngredients ];
+}
