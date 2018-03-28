@@ -21,7 +21,7 @@ var btn_search = selector("submit_button");
 addlistener("form_id", "submit", function(e) {
   e.preventDefault();
 
-  var url = "http://www.recipepuppy.com/api/?q="
+  var url = "https://cors-anywhere.herokuapp.com/http://www.recipepuppy.com/api/?q="
   var search_text = search_input.value;
   var section = selector("our_section");
 

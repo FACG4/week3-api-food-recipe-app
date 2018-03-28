@@ -24,11 +24,10 @@ function fetch(url, callback) {
       callback(response);
     }
   }
-  xhr.open('GET', url)
+  xhr.open('GET', url, true)
   xhr.send();
 };
-console.log('ssssssssssssssssss');
-console.log('sss', module);
-if(module){
+
+if(typeof module !== "undefined"){
 module.exports = [recipTitle , recipIngredients ];
 }
