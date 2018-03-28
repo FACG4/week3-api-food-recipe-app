@@ -44,5 +44,8 @@ npm test
 
 ## How we worked :     
 pair programming :)
+
 responsive design : mobile first .
+
+TDD .
 # Happy Experience :sunglasses:
