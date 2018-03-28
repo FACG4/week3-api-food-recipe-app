@@ -32,8 +32,26 @@ function recipPic (filteredrponse) {
 //function return the image
 
 function ingimg(response) {
-return response.hits[0].largeImageURL;
-}
+  let imgsrc="" ;
+  for (let hit of response.hits){
+    if (typeof hit !== 'undefined'){
+    return (hit.largeImageURL);
+    }
+  }
+  if (imgsrc=="") {
+      imgsrc="https://cdn3.iconfinder.com/data/icons/kitchen-utensils-1/512/Pan-512.png"
+  }
+  return imgsrc;
+  // for (var i = 0; i < response.totalHits; i++) {
+  //     if(typeof (response.hits[i].largeImageURL)!== undefined ){
+  //       console.log("response.hits[i].largeImageURL");
+  //       return response.hits[i].largeImageURL;
+
+
+  }
+
+
+
 
 //function fetch a connection to the api
 function fetch(url, callback) {
@@ -44,7 +62,7 @@ function fetch(url, callback) {
       callback(response);
     }
   }
-  xhr.open('GET', url)
+  xhr.open('GET', url ,false)
   xhr.send();
 };
 
