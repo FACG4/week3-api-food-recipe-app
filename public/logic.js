@@ -56,7 +56,7 @@ function fetch(url, callback) {
       callback(response);
     }
   }
-  xhr.open('GET', url, false)
+  xhr.open('GET', url, false);
   xhr.send();
 };
 
