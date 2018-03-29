@@ -32,27 +32,32 @@ addlistener("form_id", "submit", function(e) {
 
   fetch(url, function(response) {
     var filtered_response = filteredResponse(response);
-    var newTitleArr = recipTitle(filtered_response);
-    for (let i of newTitleArr) {
-      var figure = creatationElements("our_section", 'figure');
-      var id_figure = newTitleArr.indexOf(i);
-      figure.setAttribute("id", id_figure);
-      figure.setAttribute("class", "figure_style");
-      const recipe_img = creatationElements(id_figure, "img");
-      const img_src = recipPic(filtered_response)[id_figure];
-      recipe_img.src = img_src;
-      recipe_img.addEventListener("click", function() {});
-      var tag = creatationElements(id_figure, "figcaption");
-      tag.textContent = i;
 
-      addlistener(id_figure, "click", function(e) {
-        e.preventDefault();
-        render_ingredients(e.target, newTitleArr);
+    if (filtered_response.length !== 0) {
+      var newTitleArr = recipTitle(filtered_response);
 
-      })
+      for (let i of newTitleArr) {
+        var figure = creatationElements("our_section", 'figure');
+        var id_figure = newTitleArr.indexOf(i);
+        figure.setAttribute("id", id_figure);
+        figure.setAttribute("class", "figure_style");
+        const recipe_img = creatationElements(id_figure, "img");
+        const img_src = recipPic(filtered_response)[id_figure];
+        recipe_img.src = img_src;
+        recipe_img.addEventListener("click", function() {});
+        var tag = creatationElements(id_figure, "figcaption");
+        tag.textContent = i;
 
+        addlistener(id_figure, "click", function(e) {
+          e.preventDefault();
+          render_ingredients(e.target, newTitleArr);
+        });
+      }
+    }else{
+      var h2 = creatationElements("our_section", 'h2');
+      h2.textContent = "SORRY !, No Resipes For This Word";
+      h2.setAttribute("class" , "h2_style");
     }
-
   });
 });
 
@@ -65,7 +70,7 @@ function render_ingredients(target, newTitleArr) {
   var title = create("h1");
   title.textContent = newTitleArr[target.id];
   var clicked_title = newTitleArr[target.id].split(" ").join("+");
-  var url2 = "https://api.edamam.com/search?q=" + clicked_title + "&app_id=54d5d928&app_key=bbf4d50ad16c2fe3f5afd35390497458&from=0&to=10";
+  var url2 = "https://cors-anywhere.herokuapp.com/https://api.edamam.com/search?q=" + clicked_title + "&app_id=54d5d928&app_key=bbf4d50ad16c2fe3f5afd35390497458&from=0&to=10";
   fetch(url2, function(response) {
     var arr_another_recipes = another_recipes(response);
     var arr_img_recipes = img_recipes(response);

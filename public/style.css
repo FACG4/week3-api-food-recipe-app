@@ -22,6 +22,13 @@ img {
   height: 70vh;
   /* min-height: 100vh; */
 }
+.h2_style {
+  font-weight: normal;
+  color: #756464;
+  font-size: 2rem;
+  margin-top: 20px;
+
+}
 
 .header_style h1 {
   font-weight: normal;
